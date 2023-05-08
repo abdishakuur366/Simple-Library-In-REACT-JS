@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+.box{
+  width: 300px;
+  height: 300px;
+  border: 2px solid blue;
+  border-radius: 5%;
+  margin-top: 10%;
+  margin-left: 30%;
+
+}
+.header{
+  font-size: 30px;
+}
+.box h1{
+  background-color:pink;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.plus{
+  margin-right: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+.minus{
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 70px;
+  font-size: 20px;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+/* .App{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+
