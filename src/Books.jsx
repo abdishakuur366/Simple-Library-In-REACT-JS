@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import  './Books.css'
 import avator1 from'./images/avator1.png'
 import avator2 from './images/avator2.jpg'
@@ -16,14 +16,14 @@ function Books() {
         {
             id: 1,
             title: "Stop requiring innovation heroism!",
-            body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            body:"labore et dolore magllamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 
             author: "Abdishakuur",
             avator:avator1,
         },
         {
             id: 2,
-            title: "How to Become a Good Backend Engineer (Fundamentals)",
+            title: "How to Become a Good Backend Engineer",
             body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 
             author: "Suzanne Collins",
@@ -56,6 +56,13 @@ function Books() {
             body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             author: "Suzanne Collins",
             avator:avator6
+        },
+        {
+            id: 7,
+            title: "The Hunger Games: Mockingjay - Start a New Life",
+            body:" sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            author: "Suzanne Collins",
+            avator:avator6
         }
     ]) 
     //Delete Individual Book Function
@@ -67,12 +74,23 @@ function Books() {
     const deleteAll=()=>{
         setBooks([])
     }
+    //UseEffect marka [] empty array lagu daro waxaa la wacaa bis marka shaashada lasoo galo,
+    //Lkn haddii aad empty array ka tagid [] mar kasto oo page kaaada state ka dhaco waa la wacaa
+    //
+    const [name, setName]= useState("shakra")
+    useEffect(
+        ()=>{
+            console.log("Running")
+        },
+        [name]
+    )
   return (
-    <div>
+    <div className='wrapper'>
+        
         
         <div className='nav'>
             <div className="logo">
-                <h1>Abdi <span>Shakuur</span></h1>
+                <a href="/"><h1>Abdi <span>Shakuur</span></h1></a>
                 <hr />
             </div>
             <div className="navBar">
@@ -84,38 +102,44 @@ function Books() {
             </ol>
             </div>
         </div>
+        <h1 className='ourBooks'>Our Books</h1>
+        <hr />
         <button onClick={()=>deleteAll()} className='btnClear'>CLEAR ALL</button>
             
             {
-                books.map((book)=> <div className='BookCard' key={book.id}>
-                    
-                    <div className='BookCard__image'>
-
-                        <img src={book.avator} width={100}  alt='waa lagu maqan yahay' />
-                        </div>
+                books.map((book)=> 
+                <div className='BookCard' key={book.id}>
+                        <img src={book.avator}  alt='waa lagu maqan yahay' />
                         <div className='BookCard__content'>
-                            <h3 className='title'>{book.title}</h3>
-                            <p>{book.body}</p>
-                            
-                            <p className='author'> <FaUser className='icon'/> {book.author}</p>
-                            <div className='BookCard__btn'>
-                                <button onClick={()=>deleteBook(book.id)} className='delete'>DELETE</button>
-                                </div>
-                            </div>
-
-                            
-                            
+                            <h3 className='title'>{book.title} <hr /></h3>
+                            <p className='bo'>{book.body}</p>
+                            <h4 className='author'> <FaUser className='icon'/>{book.author}</h4>
+                            <button onClick={()=>deleteBook(book.id)} className='delete'>DELETE</button>
+                        </div> 
 
                 </div>)
             }
+            {/* <button onClick={()=>{setName("Hassan")}}>Update</button>
+            <p>{name}</p> */}
             
 
-                            <div className="footer">
+                            {/* <div clasnsName="footer">
                                 <h1>This is my FOOTER</h1>
                                 <p>&copy; CopyRight 2023 Abdishakur    </p>
                                 <a href="https://www.facebook.com/shakraxasanxaaji/"><FaFacebook/></a>
                                 <a href="https://www.twitter.com/@shakr21372/"><FaTwitter/></a>
                                 <a href="https://www.instagram.com/shakraxasanxaaji/"><FaInstagram/></a>
+                            </div> */}
+
+                            <div className="dambe">
+                                <h1>This is my FOOTER</h1>
+                                <p className=' h'>&copy; CopyRight 2023 Abdishakur    </p>
+                                <div className="social">
+                                <h5>My Social Accounts</h5>
+                                <a href="https://www.facebook.com/shakraxasanxaaji/"><FaFacebook/></a>
+                                <a href="https://www.twitter.com/@shakr21372/"><FaTwitter/></a>
+                                <a href="https://www.instagram.com/shakraxasanxaaji/"><FaInstagram/></a>
+                                </div>
                             </div>
             
     </div>

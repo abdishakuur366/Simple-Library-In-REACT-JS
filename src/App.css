@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-.box{
+/* .box{
   width: 300px;
   height: 300px;
   border: 2px solid blue;
@@ -12,7 +12,7 @@
 }
 .header{
   font-size: 30px;
-}
+} */
 .box h1{
   background-color:pink;
   color: white;

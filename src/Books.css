@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Shadows+Into+Light&display=swap');
+
+*{
+    padding: 0px;
+    margin: 100 auto;
+}
+
 body {
     
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    /* background-size: cover;
+    background-position: center; */
     background-color: teal;
-    width: 100%;
+    /* width: 100%; */
     
   }
-.btnClear{
+/* .btnClear{
     background-color: red;
     padding: 10px;
     border: 1px dashed white;
@@ -15,6 +23,8 @@ body {
     color: white;
     margin-left: 1000px;
     margin-top: 10px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
     
     
 }
@@ -24,43 +34,204 @@ body {
     border: 1px dashed red;
     border-radius: 25px;
     box-shadow: 2px 2px 4px rgb(255, 255, 255);
-}
-.BookCard__image{
-    width: 100px;
-    height: 100px;
-    border-radius: 150px;
-    /* background-color: #f5f5f5; */
-    background-size: cover;
-    margin-left: 250px;
-    margin-top: 50px;
-    /* border: 2px solid #f5f5f5; */
-    
+} */
+.btnClear {
+    margin-left: 1000px;
+    --border-radius: 25px;
+    --border-width: 7px;
+    appearance: none;
+    position: relative;
+    padding: 1em 2em;
+    border: 0;
+    background-color: #212121;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffff;
+    z-index: 2;
+  }
+  
+  btnClear::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    background-image: conic-gradient(
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080
+      );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue634 linear 500ms infinite;
+    animation-play-state: paused;
+    border-radius: 20px;
+    border-color: #000;
+  }
+  
+  btnClear:hover::after {
+    animation-play-state: running;
+    border-radius: 10px;
+  }
+  
+  @keyframes rotate-hue634 {
+    to {
+      filter: hue-rotate(1turn);
+    }
+  }
+  
+  .btnClear,
+  .btnClear::after {
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+  
+  .btnClear:active {
+    --border-width: 5px;
+  }
+  
+  .btnClear {
+    padding: 0.9em 1.6em;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 32px;
+  }
+  
+  .btnClear::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .btnClear::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #07d888, #e40851, #2f00ff, #00ff37,
+        #ec0808, #2600ff, #0bd157, #2f00ff
+  );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing345 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 20px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing345 {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .btnClear:hover::before {
+    opacity: 1;
+  }
+  
+  .bbtnClearn:active:after {
+    background: transparent;
+  }
+  
+  .btnClear:active {
+    color: #000;
+    font-weight: bold;
+  }
+
+
+.BookCard__content{
+    width:55%;
 }
 
 
-.BookCard{
+/* .BookCard{
     width: 60%;
     padding: 10px;
-    display: flex;
+    /* display: flex; */
     /* align-items: center; */
-    gap: 20px;
-    margin-right: 200px;
-    padding: 10px;
     
+    /* gap: 20px;
+    /* margin-right: 200px; */
+    /* padding: 10px; */ 
+    
+    
+    
+/* } */ 
+
+.BookCard{
+    width: 70%;
+    background-color: rgb(33, 158, 158);
+    border-radius: 15px;
+    padding: 4px;
+    margin-left: 250px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     
 }
+.BookCard .title{
+    color: yellow;
+    font-weight: 1000;
+}
+
+
 img{
-    width: 100px; 
-    height: 100px;
-    object-fit: cover;
-    object-fit: cover;
+    width: 150px; 
+    height: 150px;
     border-radius: 50%;
-    margin-top:10px;
+    margin-top:23px;
+    margin-bottom: 90px;
+    
     border: 2px solid tomato;
     box-shadow: 2px 2px 4px rgb(255, 255, 255);
     
     
 }
+/* .BookCard__content{
+    
+} */
 .icon{
     color: white;
     margin-top: 20px;
@@ -68,11 +239,19 @@ img{
 
 }
 .author{
-    margin-right:490px ;
+    margin-right:300px ;
     font-size: 16px;
     font-weight: 900;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: burlywood;
+    color: gold;
+}
+
+
+.BookCard  .bo{
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 18px;
+color:azure;
+/* font-weight: bolder; */
 }
 
 .delete{
@@ -81,7 +260,8 @@ img{
     border: 1px dashed white;
     border-radius: 25px;
     color: white;
-    margin-left: 590px;
+    margin-left: 400px;
+    margin-bottom: 20px;
     
 }
 
@@ -102,11 +282,10 @@ img{
     color: white;
 }
 
-.footer{
+/* .footer{
     background-color: rgba(127, 255, 212, 0.491);
-    position:inherit;
-    /* height: 80px;
-    width: 100%; */
+    height: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,10 +305,52 @@ img{
     margin-top: 20px;
     margin-left: 30px;
     font-size: 20px;
+    
 
 }
+
 .footer h1{
     margin-top: 20px;
+    /* position: fixed; */
+    
+/* } */ 
+.dambe{
+    width: 100%;
+    height: 130px;
+    background-color: rgba(127, 255, 212, 0.491);
+    /* display: flex; */
+    
+}
+.dambe h1,p{
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+
+}
+.dambe .f{
+    margin-top: 30px;
+}
+
+.social {
+    
+    margin-top: -100px;
+    margin-left: -950px;
+
+    
+}
+.social a{
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+   
+    
+}
+.social h5{
+    color: gold;
+    font-size: 20px;
+}
+.dambe a:hover{
+    color: tomato;
+    font-size: 25px;
 }
 .nav{
     display: flex;
@@ -138,8 +359,8 @@ img{
 }
 .logo{
     margin-bottom: 10px;
-    font-family: 'Reem Kufi', sans-serif;
-    font-family: 'Shadows Into Light', cursive;
+    /* font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Shadows Into Light', cursive; */
     
 }
 span{
@@ -161,18 +382,34 @@ span{
     margin-left: 270px;
     
 } */
-.nav a:hover{
+.nav .navBar a{
+    color: white;
+}
+.nav .navBar a:hover{
     color: tomato;
     font-size: 25px;
     /* background-color: turquoise;
     padding: 20px;
     border-radius: 25px; */
 }
-
 a{
+    text-decoration: none;
+}
+
+.footer a{
     text-decoration: none;
     color: white;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-
+.ourBooks{
+    font-size: 38px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    color: gold;
+    /* background-color: blueviolet;
+    width: fit-content;
+    margin-left: 600px;
+    padding: 7px;
+    border-radius: 25px; */
+}
